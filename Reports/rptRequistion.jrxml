@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptRequistion" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce49e474-25f6-4dac-8d35-41d94024d17f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="112"/>
+	<parameter name="gatepass" class="java.lang.String"/>
+	<parameter name="rsno" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblreq.`srno` AS tblreq_srno,
+     tblreq.`from` AS tblreq_from,
+     tblreq.`to` AS tblreq_to,
+     tblreq.`rsno` AS tblreq_rsno,
+     tblreq.`rsdate` AS tblreq_rsdate,
+     tblreq.`itemname` AS tblreq_itemname,
+     tblreq.`issuedqty` AS tblreq_issuedqty,
+     tblreq.`remarks` AS tblreq_remarks
+FROM
+     `tblreq` tblreq
+WHERE
+     `tblreq`.rsno = $P{rsno}]]>
+	</queryString>
+	<field name="tblreq_srno" class="java.lang.Integer"/>
+	<field name="tblreq_from" class="java.lang.String"/>
+	<field name="tblreq_to" class="java.lang.String"/>
+	<field name="tblreq_rsno" class="java.lang.Integer"/>
+	<field name="tblreq_rsdate" class="java.lang.String"/>
+	<field name="tblreq_itemname" class="java.lang.String"/>
+	<field name="tblreq_issuedqty" class="java.lang.Double"/>
+	<field name="tblreq_remarks" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<line>
+				<reportElement uuid="48385a08-cd6f-4dae-a09f-562beb5ae6fa" x="-17" y="127" width="833" height="1"/>
+			</line>
+			<image>
+				<reportElement uuid="4bf556bf-271a-4b91-afa3-f86efc02530e" x="10" y="10" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="ea697719-0fe8-4b21-9646-50f3c920ed09" x="119" y="24" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="899b678c-88ff-4f9e-bbe2-0e194f72d588" x="118" y="-4" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9f0c0fc3-2127-4662-8a4b-2f20badeb732" x="255" y="0" width="263" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQUISTION SLIP FOR STORE ITEMS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="164" splitType="Stretch">
+			<line>
+				<reportElement uuid="907d641e-b3c9-430c-b31e-2e319d829628" x="2" y="7" width="800" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="ebb3ac06-dee7-4e34-81fa-bc43fa91b9b5" x="1" y="36" width="801" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="2b29fe5b-afda-4d1f-b694-cd5905b82040" x="2" y="8" width="52" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ From :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="55899f67-eb45-4d99-99df-015e57115bab" x="2" y="48" width="52" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ To :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fed9a077-a55d-4fbb-b32e-c5593594423c" x="479" y="8" width="52" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ R.S.No. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec5745a1-c244-4bfc-9b9d-126d5c4e53b3" x="479" y="48" width="64" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ R.S.Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a0904595-0851-4b7c-affb-3299bf2aa11f" x="4" y="83" width="214" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Please Issue the following items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af45918b-1695-4eba-91c2-af2f2567b4df" x="8" y="115" width="30" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR.NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29fbc7ec-ed68-4f90-b429-6ed25b017a9f" x="58" y="122" width="133" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION OF ITEMS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="00986e32-ff8a-4d85-913e-db9216eadd43" x="423" y="116" width="74" height="28"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANTITY ISSUED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="df0ed616-f6c2-46a4-8ec2-647e0c19b4fa" x="664" y="116" width="74" height="28"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="e3c16eac-4a60-447d-8cd6-cbe4286147f9" x="801" y="8" width="1" height="143"/>
+			</line>
+			<line>
+				<reportElement uuid="d379bfac-b5cc-444e-8cfb-e2fa03866383" x="1" y="7" width="1" height="144"/>
+			</line>
+			<line>
+				<reportElement uuid="5e3ec4fe-d2ae-4fc3-8dc4-0f4f9e076c98" x="0" y="75" width="801" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d3fda8e9-e57e-4ffa-bfaa-89508a2684a2" x="2" y="151" width="799" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="733260b7-3f95-4c18-a39f-945182c09911" x="3" y="109" width="797" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="a503e37a-c4f2-48da-9914-341fba0f52a3" x="543" y="9" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblreq_rsno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3da8f110-ce56-460f-8f17-340c5a8b8640" x="68" y="10" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblreq_from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="29e0694b-5e0b-463d-8c43-4c3437a68bb7" x="68" y="48" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblreq_to}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f29c5a0-7507-4edd-923d-1af886203d8c" x="536" y="48" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblreq_rsdate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="794a7707-f4b6-4437-b5dd-8185b8c2a77d" x="4" y="1" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="746238cb-c89f-4805-8805-d85dec6da335" x="60" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblreq_itemname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f411199-161f-4205-86dd-5d083e630a43" x="410" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tblreq_issuedqty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3e0f1caf-84ce-4927-badc-3ad72c6fcfd2" x="654" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tblreq_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ba3efecd-b996-493a-bb2d-397449167330" x="6" y="54" width="98" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Requisition By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7036b12b-c124-49b7-b30b-c3e44b7de654" x="339" y="54" width="65" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issued To]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bf2178a3-97fd-4213-a6b7-5a2ef08d333b" x="686" y="54" width="74" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Received By]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="700ad3a1-f302-450d-9d37-f0163b04380b" x="2" y="10" width="800" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="300aa9c5-ea2f-424f-8379-84e44d6e8934" x="801" y="-152" width="1" height="162"/>
+			</line>
+			<line>
+				<reportElement uuid="776ce43b-6f13-4ae0-88b9-387d5aca3631" x="1" y="-152" width="1" height="163"/>
+			</line>
+			<line>
+				<reportElement uuid="c6b3aa37-b8c4-4e24-95ee-a983e159f997" x="54" y="-170" width="1" height="180"/>
+			</line>
+			<line>
+				<reportElement uuid="e19ae420-e927-4922-8de6-79a6dc78c145" x="330" y="-164" width="1" height="174"/>
+			</line>
+			<line>
+				<reportElement uuid="a980116a-4932-4b3d-a2a9-372b5417e389" x="623" y="-165" width="1" height="176"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b54440fa-2fbd-40b1-bc2f-e46c2d90d936" x="1" y="33" width="98" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User's Sign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d6ba7374-1c6a-4d1c-b42d-50889b26dc80" x="342" y="33" width="58" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STR KPR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be4ce2b3-c065-4320-ad0c-bf034fa54171" x="686" y="33" width="98" height="21"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User's Sign]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptPORegister" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f98d0ce0-c74a-48d7-a233-db2b3f37f5ed">
+	<property name="ireport.zoom" value="0.9090909090909093"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblpurchaseorder.`id` AS tblpurchaseorder_id,
+     tblpurchaseorder.`pono` AS tblpurchaseorder_pono,
+     tblpurchaseorder.`refno` AS tblpurchaseorder_refno,
+     tblpurchaseorder.`refdate` AS tblpurchaseorder_refdate,
+     tblpurchaseorder.`podate` AS tblpurchaseorder_podate,
+     tblpurchaseorder.`name` AS tblpurchaseorder_name,
+     tblpurchaseorder.`totaldis` AS tblpurchaseorder_totaldis,
+     tblpurchaseorder.`totaltax` AS tblpurchaseorder_totaltax,
+     tblpurchaseorder.`taxtype` AS tblpurchaseorder_taxtype,
+     tblpurchaseorder.`gt` AS tblpurchaseorder_gt,
+     tblpurchaseorderdetails.`pono` AS tblpurchaseorderdetails_pono,
+     tblpurchaseorderdetails.`itemname` AS tblpurchaseorderdetails_itemname,
+     tblpurchaseorderdetails.`uom` AS tblpurchaseorderdetails_uom,
+     tblpurchaseorderdetails.`qty` AS tblpurchaseorderdetails_qty,
+     tblpurchaseorderdetails.`rate` AS tblpurchaseorderdetails_rate,
+     tblpurchaseorderdetails.`amount` AS tblpurchaseorderdetails_amount,
+     tblpurchaseorderdetails.`taxrate` AS tblpurchaseorderdetails_taxrate,
+     tblpurchaseorderdetails.`taxamt` AS tblpurchaseorderdetails_taxamt,
+     tblpurchaseorderdetails.`disper` AS tblpurchaseorderdetails_disper,
+     tblpurchaseorderdetails.`pendqty` AS tblpurchaseorderdetails_pendqty
+FROM
+     `tblpurchaseorder` tblpurchaseorder,
+     `tblpurchaseorderdetails` tblpurchaseorderdetails]]>
+	</queryString>
+	<field name="tblpurchaseorder_id" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_refno" class="java.lang.String"/>
+	<field name="tblpurchaseorder_refdate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_podate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_name" class="java.lang.String"/>
+	<field name="tblpurchaseorder_totaldis" class="java.lang.Double"/>
+	<field name="tblpurchaseorder_totaltax" class="java.lang.Float"/>
+	<field name="tblpurchaseorder_taxtype" class="java.lang.String"/>
+	<field name="tblpurchaseorder_gt" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorderdetails_itemname" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_uom" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_qty" class="java.lang.Float"/>
+	<field name="tblpurchaseorderdetails_rate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_amount" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxrate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxamt" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_disper" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_pendqty" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<line>
+				<reportElement uuid="254f9418-49f0-4302-978e-6ae71065e7c4" x="1" y="123" width="801" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="2dcb740b-50a4-45ef-8f47-940e67f820a3" x="106" y="27" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eda67651-5f8d-4ad6-a9de-ff877cb97389" x="105" y="4" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="d0d5efee-b3b4-4692-95b3-5d70272ff592" x="4" y="2" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="54adfd84-216e-4377-bc85-401f4e249ef4" x="263" y="6" width="318" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase Order Register ( Bought out Items)]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ace0aeb6-53e3-4510-a2df-663af9d509e2" x="3" y="11" width="67" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PURCHASE ORDER NO & DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8c43d820-e675-4bb0-b8ee-d237b81f3de0" x="75" y="11" width="58" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="43ef11b7-46c9-473b-aa8f-2eb8c524c271" x="147" y="11" width="74" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION OF MATERIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dffd81dd-6cc7-41e9-bf72-2a626cdb8aa5" x="234" y="11" width="29" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORD.QTY IN KGS/PCS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="43a7fd74-1c25-4139-891d-142fd9b8d132" x="273" y="11" width="50" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RATE (KGS/PCS)RS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a22c6de8-a24c-4030-88ef-5f466c1e2eaf" x="323" y="11" width="70" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DELIVERY SCHEDULE]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="8a0b07e4-536c-4e6f-b7b2-c1b1f476802b" x="0" y="5" width="802" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="5e58415f-3b8b-402d-8632-2e8336dfaf55" x="394" y="6" width="1" height="69"/>
+			</line>
+			<line>
+				<reportElement uuid="32537c94-6765-4b63-810a-77d803544415" x="0" y="75" width="802" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="1718db2e-e237-4501-8a87-099955b466ed" x="704" y="7" width="1" height="69"/>
+			</line>
+			<staticText>
+				<reportElement uuid="fcaa9385-5027-464c-9bf7-494e1b7021e8" x="401" y="30" width="29" height="45"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BILL NO.]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="0402d92e-cc5b-4d00-86ed-32366e2b6cd6" x="397" y="30" width="307" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="f5d63708-2823-4ef0-9db9-b6ac4a581ed4" x="447" y="7" width="218" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIPT DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d056629b-ff6e-4353-9976-8c886188675b" x="459" y="30" width="29" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BILL DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0118d423-b223-467f-9901-de50719ae40a" x="508" y="30" width="40" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQ. QTY KGS/PCS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="23ff1bd4-8b0f-447e-8a65-78f5792a6ebc" x="549" y="31" width="39" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAL. QTY KGS/PCS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="98f2c8d1-9543-4da6-829c-4a0d8fc165c1" x="592" y="32" width="29" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRR NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c53e46b-d698-45e8-9e35-9fb8d7749c4f" x="625" y="34" width="35" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIPT DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e169c959-0c98-40d6-a165-9cd19f2757ce" x="665" y="34" width="41" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DELAYED DAYS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5d043c6e-9599-420c-811f-1179709892a7" x="709" y="11" width="44" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e37d47b-869c-431e-b8fe-5a54bf36192d" x="762" y="11" width="33" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIGN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50"/>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement uuid="c766bd37-a803-4035-8018-9452d5e4d642" x="1" y="8" width="800" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="a042958f-19e0-4281-82f3-9c8a02cc74c8" x="800" y="-285" width="2" height="294"/>
+			</line>
+			<line>
+				<reportElement uuid="cca0205e-5651-4ed6-877a-92f35c599438" x="0" y="-285" width="1" height="292"/>
+			</line>
+			<line>
+				<reportElement uuid="70570dd2-06e6-4b0d-b76d-531176207039" x="756" y="-285" width="1" height="290"/>
+			</line>
+			<line>
+				<reportElement uuid="574edb6e-17b8-4e85-9bd8-bee0a77a5819" x="705" y="-273" width="2" height="279"/>
+			</line>
+			<line>
+				<reportElement uuid="0c970f35-152f-48c8-8854-bd9903409bd6" x="662" y="-261" width="1" height="266"/>
+			</line>
+			<line>
+				<reportElement uuid="41539bd6-3e93-46da-bd6d-2b0261bab826" x="622" y="-263" width="3" height="269"/>
+			</line>
+			<line>
+				<reportElement uuid="615e15d6-65c1-43bc-b1bf-45cc3aae8bc0" x="587" y="-261" width="1" height="266"/>
+			</line>
+			<line>
+				<reportElement uuid="151c366c-fdc9-4b6e-a76c-153d61bf60a9" x="548" y="-261" width="1" height="267"/>
+			</line>
+			<line>
+				<reportElement uuid="ebc62921-1469-4a9b-995e-72555d80a425" x="503" y="-261" width="3" height="266"/>
+			</line>
+			<line>
+				<reportElement uuid="97f60c87-d960-4bed-9b54-53184b5a11ff" x="439" y="-261" width="1" height="268"/>
+			</line>
+			<line>
+				<reportElement uuid="bab3c89a-0e19-4846-acd4-b2d56ced780c" x="393" y="-241" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement uuid="42a4c4e0-5a36-4fed-9543-bb0913d1230c" x="328" y="-284" width="1" height="290"/>
+			</line>
+			<line>
+				<reportElement uuid="abe0eb42-afba-4ce3-b832-1e5ff637f818" x="270" y="-284" width="1" height="289"/>
+			</line>
+			<line>
+				<reportElement uuid="39361f84-3add-4c41-bb30-8d22638dc29b" x="229" y="-285" width="1" height="290"/>
+			</line>
+			<line>
+				<reportElement uuid="b69a7e2f-5d55-4c69-8a4e-b3e46a97fd3b" x="143" y="-284" width="2" height="290"/>
+			</line>
+			<line>
+				<reportElement uuid="5ae38592-d7c1-492d-85be-b20a21cdf8ea" x="69" y="-283" width="1" height="290"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

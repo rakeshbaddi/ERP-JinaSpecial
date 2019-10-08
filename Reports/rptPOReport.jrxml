@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptPOReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4f3b111-33f4-4c51-be81-4399f7c7aa3d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="gatepass" class="java.lang.String"/>
+	<parameter name="rsno" class="java.lang.String"/>
+	<parameter name="date1" class="java.lang.String"/>
+	<parameter name="pono" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tblpurchaseorder.`id` AS tblpurchaseorder_id,
+     tblpurchaseorder.`pono` AS tblpurchaseorder_pono,
+     tblpurchaseorder.`refno` AS tblpurchaseorder_refno,
+     tblpurchaseorder.`refdate` AS tblpurchaseorder_refdate,
+     tblpurchaseorder.`podate` AS tblpurchaseorder_podate,
+     tblpurchaseorder.`name` AS tblpurchaseorder_name,
+     tblpurchaseorder.`totaldis` AS tblpurchaseorder_totaldis,
+     tblpurchaseorder.`totaltax` AS tblpurchaseorder_totaltax,
+     tblpurchaseorder.`taxtype` AS tblpurchaseorder_taxtype,
+     tblpurchaseorder.`gt` AS tblpurchaseorder_gt,
+     tblpurchaseorder.`delv_date` AS tblpurchaseorder_delv_date,
+     tblpurchaseorder.`pack_cost` AS tblpurchaseorder_pack_cost,
+     tblpurchaseorder.`transp_cost` AS tblpurchaseorder_transp_cost,
+     tblpurchaseorder.`payment_terms` AS tblpurchaseorder_payment_terms,
+     tblpurchaseorderdetails.`pono` AS tblpurchaseorderdetails_pono,
+     tblpurchaseorderdetails.`item_code` AS tblpurchaseorderdetails_item_code,
+     tblpurchaseorderdetails.`itemname` AS tblpurchaseorderdetails_itemname,
+     tblpurchaseorderdetails.`uom` AS tblpurchaseorderdetails_uom,
+     tblpurchaseorderdetails.`qty` AS tblpurchaseorderdetails_qty,
+     tblpurchaseorderdetails.`rate` AS tblpurchaseorderdetails_rate,
+     tblpurchaseorderdetails.`amount` AS tblpurchaseorderdetails_amount,
+     tblpurchaseorderdetails.`taxrate` AS tblpurchaseorderdetails_taxrate,
+     tblpurchaseorderdetails.`taxamt` AS tblpurchaseorderdetails_taxamt,
+     tblpurchaseorderdetails.`disper` AS tblpurchaseorderdetails_disper,
+     tblpurchaseorderdetails.`pendqty` AS tblpurchaseorderdetails_pendqty,
+     tblitem.`id` AS tblitem_id,
+     tblitem.`grrno` AS tblitem_grrno,
+     tblitem.`itemname` AS tblitem_itemname,
+     tblitem.`description` AS tblitem_description,
+     tblitem.`rate` AS tblitem_rate,
+     tblitem.`hsn` AS tblitem_hsn,
+     tblitem.`dept` AS tblitem_dept,
+     tblitem.`min_order_level` AS tblitem_min_order_level,
+     tblitem.`max_order_level` AS tblitem_max_order_level,
+     tblitem.`maker` AS tblitem_maker,
+     tblitem.`uom` AS tblitem_uom,
+     tblitem.`tax` AS tblitem_tax
+FROM
+     tblpurchaseorder,
+         tblpurchaseorderdetails,
+         tblitem
+where
+      `tblpurchaseorder`.pono=$P{pono} and
+      `tblpurchaseorderdetails`.pono=$P{pono} and
+     `tblitem`.itemname= `tblpurchaseorderdetails`.itemname]]>
+	</queryString>
+	<field name="tblpurchaseorder_id" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_refno" class="java.lang.String"/>
+	<field name="tblpurchaseorder_refdate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_podate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_name" class="java.lang.String"/>
+	<field name="tblpurchaseorder_totaldis" class="java.lang.Double"/>
+	<field name="tblpurchaseorder_totaltax" class="java.lang.Float"/>
+	<field name="tblpurchaseorder_taxtype" class="java.lang.String"/>
+	<field name="tblpurchaseorder_gt" class="java.lang.Double"/>
+	<field name="tblpurchaseorder_delv_date" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_pack_cost" class="java.lang.String"/>
+	<field name="tblpurchaseorder_transp_cost" class="java.lang.String"/>
+	<field name="tblpurchaseorder_payment_terms" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorderdetails_item_code" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_itemname" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_uom" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_qty" class="java.lang.Float"/>
+	<field name="tblpurchaseorderdetails_rate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_amount" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxrate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxamt" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_disper" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_pendqty" class="java.lang.Double"/>
+	<field name="tblitem_id" class="java.lang.Integer"/>
+	<field name="tblitem_grrno" class="java.lang.String"/>
+	<field name="tblitem_itemname" class="java.lang.String"/>
+	<field name="tblitem_description" class="java.lang.String"/>
+	<field name="tblitem_rate" class="java.lang.Double"/>
+	<field name="tblitem_hsn" class="java.lang.String"/>
+	<field name="tblitem_dept" class="java.lang.String"/>
+	<field name="tblitem_min_order_level" class="java.lang.Double"/>
+	<field name="tblitem_max_order_level" class="java.lang.Double"/>
+	<field name="tblitem_maker" class="java.lang.String"/>
+	<field name="tblitem_uom" class="java.lang.String"/>
+	<field name="tblitem_tax" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a7da77a1-8cfb-4aa3-91c6-92f746610f74" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorder_pono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e44ce8bc-008d-4498-8ac0-42d0d5fb8dc1" x="114" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_itemname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

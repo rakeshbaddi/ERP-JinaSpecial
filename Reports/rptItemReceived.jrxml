@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptItemReceived" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d6918eb-abc8-4bc8-a2bb-64472524562b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="gatepass" class="java.lang.String"/>
+	<parameter name="rsno" class="java.lang.String"/>
+	<parameter name="date1" class="java.lang.String"/>
+	<parameter name="pono" class="java.lang.String"/>
+	<parameter name="item" class="java.lang.String"/>
+	<parameter name="date2" class="java.lang.String"/>
+	<parameter name="date3" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblgrr.`id` AS tblgrr_id,
+     tblgrr.`grrno` AS tblgrr_grrno,
+     tblgrr.`recpt_date` AS tblgrr_recpt_date,
+     tblgrr.`pono` AS tblgrr_pono,
+     tblgrr.`podate` AS tblgrr_podate,
+     tblgrr.`supp_name` AS tblgrr_supp_name,
+     tblgrr.`item_desc` AS tblgrr_item_desc,
+     tblgrr.`inv_no` AS tblgrr_inv_no,
+     tblgrr.`inv_date` AS tblgrr_inv_date,
+     tblgrr.`inv_qty` AS tblgrr_inv_qty,
+     tblgrr.`item_price` AS tblgrr_item_price,
+     tblgrr.`revd_qty` AS tblgrr_revd_qty,
+     tblgrr.`dcno` AS tblgrr_dcno,
+     tblgrr.`rejctd_qty` AS tblgrr_rejctd_qty
+FROM
+     tblgrr
+where
+     `tblgrr`.pono=$P{pono}]]>
+	</queryString>
+	<field name="tblgrr_id" class="java.lang.Integer"/>
+	<field name="tblgrr_grrno" class="java.lang.String"/>
+	<field name="tblgrr_recpt_date" class="java.lang.String"/>
+	<field name="tblgrr_pono" class="java.lang.String"/>
+	<field name="tblgrr_podate" class="java.lang.String"/>
+	<field name="tblgrr_supp_name" class="java.lang.String"/>
+	<field name="tblgrr_item_desc" class="java.lang.String"/>
+	<field name="tblgrr_inv_no" class="java.lang.String"/>
+	<field name="tblgrr_inv_date" class="java.lang.String"/>
+	<field name="tblgrr_inv_qty" class="java.lang.String"/>
+	<field name="tblgrr_item_price" class="java.lang.String"/>
+	<field name="tblgrr_revd_qty" class="java.lang.String"/>
+	<field name="tblgrr_dcno" class="java.lang.String"/>
+	<field name="tblgrr_rejctd_qty" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="147" splitType="Stretch">
+			<line>
+				<reportElement uuid="efab48f8-9f60-4c0f-8a89-d15eed2fc998" x="-20" y="145" width="598" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="bd3ed604-1e08-4da6-8bc1-3b55a9ffd4c6" x="103" y="35" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1cd0e64b-59c5-4d03-ac3e-33dad30e03e9" x="102" y="7" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="183a5331-bbac-42c3-8dd2-a4f23aee8120" x="3" y="5" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f408ef31-63ba-4dfe-9516-7084b2e647c1" x="210" y="0" width="213" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATERIAL RECEIVED]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="4b70692f-09ff-41ba-948e-6f779e8e2cea" x="-20" y="21" width="598" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f0aa260a-e00b-49d2-b0a0-46802cfdcdf2" x="6" y="85" width="25" height="36"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR.NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abe82690-444b-4944-9977-6191974a2ad5" x="42" y="85" width="126" height="36"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3e89ca27-32ef-4ef1-b652-a91223785587" x="10" y="62" width="126" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER NAME :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c3a5afcc-cbb8-4888-9d1f-ce9998d347e5" x="194" y="85" width="31" height="36"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3e956637-9918-4253-894b-dacdb0f21c4c" x="245" y="85" width="73" height="36"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82308877-32d8-4fc8-a7f3-9e52ae223493" x="336" y="85" width="73" height="36"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REJECTED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2de84652-fcc7-4d87-bb45-94a93122f833" x="10" y="4" width="53" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P.O.NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d164fc4-8dfe-488f-a890-ca6773ae1ce5" x="348" y="4" width="74" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P.O.DATE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa0695b3-eb21-40b3-8ccc-04f5b410ab9f" x="10" y="31" width="53" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INV.NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a0cc0bae-9b7a-48e5-863a-741b3f7e69e2" x="348" y="31" width="74" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INV.DATE:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="96d09063-ab30-4b90-aa3a-ec6ecbcb76c2" x="1" y="125" width="554" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="5d8636c5-ae40-42e2-b90d-499ca791f3c3" x="68" y="4" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_pono}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="dfa30661-a26b-4cae-978e-97eb80b46ca2" x="411" y="4" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_podate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="ded53aae-5d80-42a6-8873-73f8eb1add11" x="411" y="31" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_inv_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df297252-caaa-479b-9e26-57f1c481204f" x="68" y="31" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_inv_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="baa55b38-78a9-4d6e-8301-e1edc9c845d3" x="119" y="62" width="303" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_supp_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="09426e04-ed12-404d-b41a-9d3f0f2876da" x="422" y="85" width="73" height="36"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[D.C NO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="60ed4eb9-dcc3-4b12-88c3-7af227744e83" x="0" y="79" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="55f2a04c-bac0-48d2-beee-dc785d668613" x="1" y="27" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3d5ca873-5fec-4889-bb82-ed2d092e7343" x="0" y="53" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="70e3bef5-6106-43c7-a849-f0573ba3ef81" x="277" y="-3" width="1" height="56"/>
+			</line>
+			<line>
+				<reportElement uuid="5da2cd26-f4c3-4c09-a010-432404c9fce9" x="554" y="-2" width="1" height="128"/>
+			</line>
+			<line>
+				<reportElement uuid="4b4be93c-9031-497f-aa9c-db397ba59733" x="-1" y="-2" width="1" height="128"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement uuid="fa984118-5552-4346-beda-dd252cbc6cda" x="6" y="2" width="21" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dc23a2e1-e568-4154-843b-7eac0b7a1f7f" x="42" y="2" width="126" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_item_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f41b2966-ef8f-45d7-8a38-5e271babaf3e" x="194" y="2" width="25" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_inv_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b13d75b-f43c-4498-803c-fa3e82200357" x="263" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_revd_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6741088a-a034-4d01-93cb-558b3d419063" x="359" y="2" width="31" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_rejctd_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ea3c6d4b-a0cc-4012-bb0a-08a305823cf9" x="436" y="2" width="49" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgrr_dcno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

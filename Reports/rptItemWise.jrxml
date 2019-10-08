@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptSupplierWise" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c847a371-8fe7-4790-b0e3-de8e277fdd41">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="gatepass" class="java.lang.String"/>
+	<parameter name="rsno" class="java.lang.String"/>
+	<parameter name="date1" class="java.lang.String"/>
+	<parameter name="pono" class="java.lang.String"/>
+	<parameter name="item" class="java.lang.String"/>
+	<parameter name="date2" class="java.lang.String"/>
+	<parameter name="date3" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tblpurchaseorder.`id` AS tblpurchaseorder_id,
+     tblpurchaseorder.`pono` AS tblpurchaseorder_pono,
+     tblpurchaseorder.`refno` AS tblpurchaseorder_refno,
+     tblpurchaseorder.`refdate` AS tblpurchaseorder_refdate,
+     tblpurchaseorder.`podate` AS tblpurchaseorder_podate,
+     tblpurchaseorder.`name` AS tblpurchaseorder_name,
+     tblpurchaseorder.`totaldis` AS tblpurchaseorder_totaldis,
+     tblpurchaseorder.`totaltax` AS tblpurchaseorder_totaltax,
+     tblpurchaseorder.`taxtype` AS tblpurchaseorder_taxtype,
+     tblpurchaseorder.`gt` AS tblpurchaseorder_gt,
+     tblpurchaseorderdetails.`pono` AS tblpurchaseorderdetails_pono,
+     tblpurchaseorderdetails.`itemname` AS tblpurchaseorderdetails_itemname,
+     tblpurchaseorderdetails.`uom` AS tblpurchaseorderdetails_uom,
+     tblpurchaseorderdetails.`qty` AS tblpurchaseorderdetails_qty,
+     tblpurchaseorderdetails.`rate` AS tblpurchaseorderdetails_rate,
+     tblpurchaseorderdetails.`amount` AS tblpurchaseorderdetails_amount,
+     tblpurchaseorderdetails.`taxrate` AS tblpurchaseorderdetails_taxrate,
+     tblpurchaseorderdetails.`taxamt` AS tblpurchaseorderdetails_taxamt,
+     tblpurchaseorderdetails.`disper` AS tblpurchaseorderdetails_disper,
+     tblpurchaseorderdetails.`pendqty` AS tblpurchaseorderdetails_pendqty
+FROM
+     tblpurchaseorder,
+     tblpurchaseorderdetails
+WHERE
+    `tblpurchaseorderdetails`.itemname=$P{item} and `tblpurchaseorderdetails`.pono=`tblpurchaseorder`.pono and
+     `tblpurchaseorder`.refdate between $P{date2} and $P{date3}]]>
+	</queryString>
+	<field name="tblpurchaseorder_id" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorder_refno" class="java.lang.String"/>
+	<field name="tblpurchaseorder_refdate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_podate" class="java.sql.Date"/>
+	<field name="tblpurchaseorder_name" class="java.lang.String"/>
+	<field name="tblpurchaseorder_totaldis" class="java.lang.Double"/>
+	<field name="tblpurchaseorder_totaltax" class="java.lang.Float"/>
+	<field name="tblpurchaseorder_taxtype" class="java.lang.String"/>
+	<field name="tblpurchaseorder_gt" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_pono" class="java.lang.Integer"/>
+	<field name="tblpurchaseorderdetails_itemname" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_uom" class="java.lang.String"/>
+	<field name="tblpurchaseorderdetails_qty" class="java.lang.Float"/>
+	<field name="tblpurchaseorderdetails_rate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_amount" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxrate" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_taxamt" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_disper" class="java.lang.Double"/>
+	<field name="tblpurchaseorderdetails_pendqty" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="149" splitType="Stretch">
+			<line>
+				<reportElement uuid="36290631-6558-45a4-8c9d-faf4bee3f7b3" x="-20" y="146" width="597" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a2510838-66b3-4e96-a458-5e185a8c7366" x="106" y="34" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f8bb2293-f35e-45d1-b538-dbcf53f6d0a0" x="105" y="6" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="576baba3-515f-47f0-b3f8-188072a1d95b" x="4" y="4" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a8102fc8-8f4c-4330-9f20-b7638b307775" x="228" y="2" width="205" height="27"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Wise Report]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6047b3ca-907d-4d78-b5d2-1ff82399ffe8" x="2" y="28" width="553" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6418f026-8095-44d5-8878-8d5fe2cc55c3" x="9" y="35" width="22" height="31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SL.NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="21376e51-4be5-413a-b29b-585801a62690" x="161" y="35" width="33" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4b01ee52-e070-466a-92a0-9eaa6483461b" x="207" y="35" width="33" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="494902ba-8d31-48c0-81b9-82c00e4a2730" x="259" y="35" width="56" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a008825-7c9b-4644-be8c-b04085a52ac1" x="343" y="35" width="26" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa6c7d05-708e-4e69-a5d1-c25aa05f4fb9" x="392" y="35" width="57" height="31"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAX AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3a0743e0-97e7-4fc8-b900-64a867b07df3" x="480" y="35" width="69" height="31"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2db52347-140d-4b8c-a490-aae8901ececa" x="9" y="4" width="98" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b012ed9a-028f-46b5-9eda-a49d3d75fbb6" x="228" y="4" width="47" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8aa50fbd-a3ff-41c2-877b-e3d4f76c838e" x="385" y="5" width="24" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="0c7ad21a-7b80-4c18-a47d-7283981dd3ef" x="0" y="70" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="4f0ec946-890e-4d1b-b9e1-88ac69ffb9f7" x="265" y="5" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1404a63c-9c18-45e3-a2b8-e2886c78b7d2" x="409" y="5" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7bf23cdb-6596-4273-b447-37b4001b52fa" x="78" y="4" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_itemname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4a267ae2-b460-4fca-a137-b02fc00d1091" x="31" y="35" width="130" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER NAME		]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement uuid="bb746e32-3f8c-4bd0-8943-3a41b724268d" x="7" y="4" width="24" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df145617-2743-4983-a7c3-e3dfc91c44e8" x="168" y="4" width="19" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_uom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d35f6b5-2ba7-424c-9024-9b5927f49ae4" x="212" y="4" width="20" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df7b0e33-a93c-48ce-a05c-b1850fcb8087" x="280" y="4" width="22" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2b9715f3-2821-4b90-bfe4-02bc05dd234b" x="346" y="3" width="26" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_taxrate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0793c939-bd58-457b-ae70-6b1c8105e939" x="412" y="4" width="34" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_taxamt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f36648bf-e218-441b-ac4a-0e3455065be1" x="508" y="4" width="22" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorderdetails_disper}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="134d0248-9ec1-427b-bcb7-e9a25ba3d62b" x="31" y="3" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblpurchaseorder_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

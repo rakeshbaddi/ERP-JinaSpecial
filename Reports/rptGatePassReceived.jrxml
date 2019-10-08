@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptGatePass" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7f78b955-e71f-4804-a878-7cc53def9691">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="91"/>
+	<parameter name="gatepass" class="java.lang.String"/>
+	<parameter name="rsno" class="java.lang.String"/>
+	<parameter name="date1" class="java.lang.String"/>
+	<parameter name="pono" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tblgatepass.`slno` AS tblgatepass_slno,
+     tblgatepass.`pasno` AS tblgatepass_pasno,
+     tblgatepass.`pass_date` AS tblgatepass_pass_date,
+     tblgatepass.`to` AS tblgatepass_to,
+     tblgatepass.`unit` AS tblgatepass_unit,
+     tblgatepass.`item` AS tblgatepass_item,
+     tblgatepass.`qty` AS tblgatepass_qty,
+     tblgatepass.`type` AS tblgatepass_type,
+     tblgatepass.`received` AS tblgatepass_received,
+     tblgatepass.`recvd_qty` AS tblgatepass_recvd_qty,
+     tblgatepass.`recvd_date` AS tblgatepass_recvd_date
+FROM
+     `tblgatepass` tblgatepass
+WHERE
+     `tblgatepass`.pasno=$P{pono}]]>
+	</queryString>
+	<field name="tblgatepass_slno" class="java.lang.Integer"/>
+	<field name="tblgatepass_pasno" class="java.lang.String"/>
+	<field name="tblgatepass_pass_date" class="java.sql.Date"/>
+	<field name="tblgatepass_to" class="java.lang.String"/>
+	<field name="tblgatepass_unit" class="java.lang.String"/>
+	<field name="tblgatepass_item" class="java.lang.String"/>
+	<field name="tblgatepass_qty" class="java.lang.Double"/>
+	<field name="tblgatepass_type" class="java.lang.String"/>
+	<field name="tblgatepass_received" class="java.lang.String"/>
+	<field name="tblgatepass_recvd_qty" class="java.lang.Integer"/>
+	<field name="tblgatepass_recvd_date" class="java.sql.Date"/>
+	<variable name="Report Count" class="java.lang.String">
+		<variableExpression><![CDATA[$V{REPORT_COUNT}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="142" splitType="Stretch">
+			<line>
+				<reportElement uuid="eb002861-f1a1-4bce-9220-86a7114561e2" x="-19" y="138" width="836" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="4de5d76a-d3b3-429a-952c-bfb53f1e1bef" x="112" y="32" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cd5354ac-d512-469a-b7d8-835e207b77ad" x="111" y="4" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="3554f523-d652-4e63-b805-411d4e0aa587" x="10" y="2" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d0b5541a-e561-43cc-8d3f-b60c274f3352" x="246" y="0" width="303" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gate Pass Material Received ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="102" splitType="Stretch">
+			<line>
+				<reportElement uuid="5ec94ced-f0b2-4d28-abc4-bc222c55f6b2" x="1" y="4" width="801" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="ad90ff4b-6edc-4fad-9a58-e2c216f2752e" x="1" y="53" width="801" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="a421573a-5601-4c36-be84-d3ea0ff205d2" x="1" y="31" width="801" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="c6c7f79f-3e9f-4b47-b78e-f03d2e44a27a" x="3" y="8" width="93" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GATE PASS NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4bf37a1d-2ab5-45b0-9484-b4a5354a6dac" x="549" y="7" width="114" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED DATE:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="edd95dfb-4c87-4c44-a7b8-43efa23577d6" x="103" y="6" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement uuid="316e8f66-d635-4c61-9b17-81844ab61fce" x="541" y="6" width="1" height="25"/>
+			</line>
+			<staticText>
+				<reportElement uuid="617f0299-3eda-466a-a405-9f628a2b4033" x="3" y="32" width="41" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d025e86b-1c41-41c5-962d-73b176b59a18" x="3" y="58" width="41" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="58265ee6-05ad-4099-95d3-65f88fe53693" x="46" y="58" width="187" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  ITEM DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de4abe4f-0adc-43cc-8baf-632b439ef19f" x="375" y="58" width="66" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd3d76f6-0456-4ca2-8fe8-b65f01209ea3" x="491" y="57" width="64" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7d35b64-5c3f-4b6e-9849-882752452923" x="718" y="58" width="64" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED QUANTITY]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1dd1a304-1ffd-4d74-bc25-7dd66f9a20f3" x="1" y="96" width="800" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="e0691ec8-91c3-4fdf-b99c-9ff9b2317e14" x="599" y="58" width="64" height="31"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATERIAL TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b6b218f0-3d5a-426a-ae01-a09b53f9dc36" x="242" y="8" width="114" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUEDD DATE:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="a04fe32d-d717-43e2-9d97-d28566d42113" x="233" y="5" width="1" height="25"/>
+			</line>
+			<textField>
+				<reportElement uuid="e82a884e-f1a0-4f49-9e8d-ab23253f24e6" x="110" y="8" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_pasno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="67684172-11fd-42ac-9176-44d2b88fb8ca" x="345" y="9" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_pass_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="3bdcf6aa-6355-4aed-8571-36a35b42e792" x="645" y="7" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_recvd_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3a53c1d9-16d0-496f-b020-78fe67f2c434" x="52" y="32" width="277" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_to}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22">
+			<textField>
+				<reportElement uuid="058cf814-3be0-42ba-ae1c-631aeb17a937" x="4" y="2" width="21" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Report Count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5d68f4cd-90bf-4097-accb-a223b357483c" x="52" y="2" width="249" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cb67b018-7a88-40c9-b22f-e8e145f92154" x="358" y="1" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8424496e-5a56-4f7a-a12b-a9569b52646e" x="463" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e7301a6e-c201-43ed-82a6-f61e037dbf59" x="577" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_type}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00 %">
+				<reportElement uuid="e3a5e867-2c53-4c9c-b60d-ab0845a8fab6" x="696" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblgatepass_recvd_qty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="154" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b342dc6b-7799-485b-a84e-f5f9247eb171" x="3" y="25" width="41" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Note :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dca4d234-45cf-4ac6-9e87-dae9e7d9ffe8" x="1" y="86" width="561" height="20"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[KST No.: 5030876 - 2  ,   CST NO. 5035876 - 5  dt.20-04-1996   & ECC No. AAAFJ9261EXM001]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="296e881b-246e-4806-85c8-fd913931bd7a" x="0" y="18" width="801" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d531f939-5494-4387-9c2d-ace1c60bb86f" x="0" y="106" width="801" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d7c5a79d-b197-4c25-be10-146787b1e848" x="1" y="75" width="800" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="27b19e54-5fc8-4426-9f4d-281789a51d0e" x="0" y="50" width="801" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="31c7faba-cb2f-4d28-8498-5d018357dcdd" x="3" y="134" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prepared By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c73c18e-010f-426a-8986-19a1c5d86086" x="683" y="134" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved By]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2cee4cc8-f01f-4bd3-9fec-c48945cca5d4" x="801" y="-145" width="1" height="163"/>
+			</line>
+			<line>
+				<reportElement uuid="18852753-2d41-470b-96c5-8559c06095a7" x="573" y="-96" width="1" height="114"/>
+			</line>
+			<line>
+				<reportElement uuid="6acfd62a-50ad-43a3-b76c-ea052fecba93" x="700" y="-89" width="1" height="108"/>
+			</line>
+			<line>
+				<reportElement uuid="a4d14aab-9238-4953-bc96-d14ca654e409" x="458" y="-93" width="1" height="111"/>
+			</line>
+			<line>
+				<reportElement uuid="c6dabcab-6383-4e70-bc86-824af1a34a76" x="355" y="-94" width="1" height="113"/>
+			</line>
+			<line>
+				<reportElement uuid="daa02651-30bd-4ea7-a5be-1b70df97a2c2" x="46" y="-93" width="1" height="112"/>
+			</line>
+			<line>
+				<reportElement uuid="e3f36402-aaf9-4e91-a4a4-08c6a72241a5" x="0" y="-145" width="1" height="162"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8f348f6b-a074-4670-9e76-090b20048055" x="3" y="34" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STR  KPR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c72fdf7-e8ee-47e8-83ac-87e4fd095050" x="683" y="34" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOD STR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ebf0b639-2fee-4960-b8de-d828df8fd646" x="3" y="64" width="100" height="21"/>
+				<textElement>
+					<font fontName="Times New Roman" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STR -FMT-03]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

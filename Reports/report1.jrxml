@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="494bccb8-2d69-497a-bd0d-3a13bf1dcfe1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblsupplier.`id` AS tblsupplier_id,
+     tblsupplier.`code` AS tblsupplier_code,
+     tblsupplier.`name` AS tblsupplier_name,
+     tblsupplier.`ph` AS tblsupplier_ph,
+     tblsupplier.`mob` AS tblsupplier_mob,
+     tblsupplier.`email` AS tblsupplier_email,
+     tblsupplier.`fax` AS tblsupplier_fax,
+     tblsupplier.`pan` AS tblsupplier_pan,
+     tblsupplier.`gstno` AS tblsupplier_gstno,
+     tblsupplier.`address` AS tblsupplier_address,
+     tblsupplier.`city` AS tblsupplier_city,
+     tblsupplier.`state` AS tblsupplier_state,
+     tblsupplier.`pin` AS tblsupplier_pin,
+     tblsupplier.`country` AS tblsupplier_country,
+     tblsupplier.`bank_name` AS tblsupplier_bank_name,
+     tblsupplier.`bank_branch` AS tblsupplier_bank_branch,
+     tblsupplier.`bank_city` AS tblsupplier_bank_city,
+     tblsupplier.`acc_num` AS tblsupplier_acc_num,
+     tblsupplier.`ifsc_code` AS tblsupplier_ifsc_code
+FROM
+     `tblsupplier` tblsupplier]]>
+	</queryString>
+	<field name="tblsupplier_id" class="java.lang.Integer"/>
+	<field name="tblsupplier_code" class="java.lang.String"/>
+	<field name="tblsupplier_name" class="java.lang.String"/>
+	<field name="tblsupplier_ph" class="java.lang.String"/>
+	<field name="tblsupplier_mob" class="java.lang.String"/>
+	<field name="tblsupplier_email" class="java.lang.String"/>
+	<field name="tblsupplier_fax" class="java.lang.String"/>
+	<field name="tblsupplier_gstno" class="java.lang.String"/>
+	<field name="tblsupplier_address" class="java.lang.String"/>
+	<field name="tblsupplier_city" class="java.lang.String"/>
+	<field name="tblsupplier_state" class="java.lang.String"/>
+	<field name="tblsupplier_pin" class="java.lang.String"/>
+	<field name="tblsupplier_country" class="java.lang.String"/>
+	<field name="tblsupplier_bank_name" class="java.lang.String"/>
+	<field name="tblsupplier_bank_branch" class="java.lang.String"/>
+	<field name="tblsupplier_bank_city" class="java.lang.String"/>
+	<field name="tblsupplier_acc_num" class="java.lang.String"/>
+	<field name="tblsupplier_ifsc_code" class="java.lang.String"/>
+	<field name="tblsupplier_pan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="95021803-1dc0-4f78-baa6-03851012bba1" x="60" y="11" width="452" height="42"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier List]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement uuid="df3807f7-4dd6-481a-bb05-3a839038d9bb" x="0" y="4" width="555" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a1386564-0ad4-45e7-8254-23f75b741a6c" x="16" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c9653473-b954-42d6-8b0f-eda4cecc3a84" x="152" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f6abaca-d422-4dd3-ad26-dde684706d26" x="289" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be58925e-82ea-4f35-9855-fe6713189354" x="451" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e0941906-dcc2-4c58-8e00-68ab6a6d9165" x="16" y="17" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblsupplier_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="145623f0-5250-47b5-884d-66f98344bec2" x="152" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblsupplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="11b167b4-7a2c-49aa-81dd-8ba54715f62f" x="289" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblsupplier_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cfa9f9f2-1d43-418a-b9a0-20ba4dff4d93" x="451" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblsupplier_mob}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1c46700-6723-4951-9ee9-6df75318daf3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tblstock.`id` AS tblstock_id,
+     tblstock.`itemname` AS tblstock_itemname,
+     tblstock.`total_qty` AS tblstock_total_qty,
+     tblitem.`id` AS tblitem_id,
+     tblitem.`grrno` AS tblitem_grrno,
+     tblitem.`itemname` AS tblitem_itemname,
+     tblitem.`description` AS tblitem_description,
+     tblitem.`rate` AS tblitem_rate,
+     tblitem.`hsn` AS tblitem_hsn,
+     tblitem.`dept` AS tblitem_dept,
+     tblitem.`min_order_level` AS tblitem_min_order_level,
+     tblitem.`max_order_level` AS tblitem_max_order_level,
+     tblitem.`uom` AS tblitem_uom,
+     tblitem.`tax` AS tblitem_tax,
+     tblitem.`rack` AS tblitem_rack
+FROM
+     `tblstock` tblstock,
+     `tblitem` tblitem
+WHERE `tblstock`.itemname=`tblitem`.itemname]]>
+	</queryString>
+	<field name="tblstock_id" class="java.lang.Integer"/>
+	<field name="tblstock_itemname" class="java.lang.String"/>
+	<field name="tblstock_total_qty" class="java.lang.Double"/>
+	<field name="tblitem_id" class="java.lang.Integer"/>
+	<field name="tblitem_grrno" class="java.lang.String"/>
+	<field name="tblitem_itemname" class="java.lang.String"/>
+	<field name="tblitem_description" class="java.lang.String"/>
+	<field name="tblitem_rate" class="java.lang.Double"/>
+	<field name="tblitem_hsn" class="java.lang.String"/>
+	<field name="tblitem_dept" class="java.lang.String"/>
+	<field name="tblitem_min_order_level" class="java.lang.Double"/>
+	<field name="tblitem_max_order_level" class="java.lang.Double"/>
+	<field name="tblitem_uom" class="java.lang.String"/>
+	<field name="tblitem_tax" class="java.lang.Float"/>
+	<field name="tblitem_rack" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String">
+		<variableExpression><![CDATA[$F{tblitem_rate}*$F{tblstock_total_qty}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="variable2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="142" splitType="Stretch">
+			<line>
+				<reportElement uuid="2f6c354d-73ba-43cf-956d-08b7c053e8d5" x="1" y="139" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="efbbd9d8-fbda-4498-ba8c-9017e82ee50f" x="111" y="6" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2f7b511-0c73-4ef2-9dc8-f10ec781c6cd" x="112" y="34" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="d28f76a8-b789-4130-b0e0-345162a2c134" x="10" y="4" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9b2602dc-f5a0-46f6-a42a-6dab2e058250" x="255" y="0" width="56" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f908245-a752-4c77-92c8-5fbd1dc47866" x="39" y="0" width="29" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="9bb65f7f-3557-4609-b5b7-c08189265988" x="1" y="20" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="bf10b929-9e8d-4741-a3a2-f9f0f8321978" x="104" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6110212-0d2c-4428-9ee0-51fb178a9b58" x="394" y="3" width="75" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount/Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7bc3e35f-a95c-407e-8fd1-3b0c34a294f1" x="480" y="1" width="75" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="41be02fa-a7ed-4d30-8652-02ef1995e7a6" x="1" y="2" width="86" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tblstock_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6ea0051c-189b-471c-99f9-16d63beedfe5" x="103" y="2" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblstock_itemname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e3ee2dde-83c8-4ed6-83cb-6f1ba9136331" x="257" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tblstock_total_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="61166b77-d693-4b3d-9096-487d90a94044" x="389" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblitem_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1666f306-faa8-46bc-906d-7d85ceb349ac" x="489" y="0" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4466af66-70b8-4b6f-83e3-6ef55b036369" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6e517aa7-aa0b-4fc9-8501-5f44ffcd9c53" x="406" y="0" width="100" height="17"/>
+				<textElement/>
+				<text><![CDATA[Page No:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

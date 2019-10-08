@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptSupplierDetails" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="65962c94-d4b6-4a43-92fa-8bb929a2ef43">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblsupplier.`id` AS tblsupplier_id,
+     tblsupplier.`code` AS tblsupplier_code,
+     tblsupplier.`name` AS tblsupplier_name,
+     tblsupplier.`ph` AS tblsupplier_ph,
+     tblsupplier.`mob` AS tblsupplier_mob,
+     tblsupplier.`email` AS tblsupplier_email,
+     tblsupplier.`fax` AS tblsupplier_fax,
+     tblsupplier.`pan` AS tblsupplier_pan,
+     tblsupplier.`gstno` AS tblsupplier_gstno,
+     tblsupplier.`address` AS tblsupplier_address,
+     tblsupplier.`city` AS tblsupplier_city,
+     tblsupplier.`state` AS tblsupplier_state,
+     tblsupplier.`pin` AS tblsupplier_pin,
+     tblsupplier.`country` AS tblsupplier_country,
+     tblsupplier.`bank_name` AS tblsupplier_bank_name,
+     tblsupplier.`bank_branch` AS tblsupplier_bank_branch,
+     tblsupplier.`bank_city` AS tblsupplier_bank_city,
+     tblsupplier.`acc_num` AS tblsupplier_acc_num,
+     tblsupplier.`ifsc_code` AS tblsupplier_ifsc_code
+FROM
+     `tblsupplier` tblsupplier]]>
+	</queryString>
+	<field name="tblsupplier_id" class="java.lang.Integer"/>
+	<field name="tblsupplier_code" class="java.lang.String"/>
+	<field name="tblsupplier_name" class="java.lang.String"/>
+	<field name="tblsupplier_ph" class="java.lang.String"/>
+	<field name="tblsupplier_mob" class="java.lang.String"/>
+	<field name="tblsupplier_email" class="java.lang.String"/>
+	<field name="tblsupplier_fax" class="java.lang.String"/>
+	<field name="tblsupplier_pan" class="java.lang.String"/>
+	<field name="tblsupplier_gstno" class="java.lang.String"/>
+	<field name="tblsupplier_address" class="java.lang.String"/>
+	<field name="tblsupplier_city" class="java.lang.String"/>
+	<field name="tblsupplier_state" class="java.lang.String"/>
+	<field name="tblsupplier_pin" class="java.lang.String"/>
+	<field name="tblsupplier_country" class="java.lang.String"/>
+	<field name="tblsupplier_bank_name" class="java.lang.String"/>
+	<field name="tblsupplier_bank_branch" class="java.lang.String"/>
+	<field name="tblsupplier_bank_city" class="java.lang.String"/>
+	<field name="tblsupplier_acc_num" class="java.lang.String"/>
+	<field name="tblsupplier_ifsc_code" class="java.lang.String"/>
+	<variable name="REPORT_NO" class="java.lang.String">
+		<variableExpression><![CDATA[$V{REPORT_COUNT}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<line>
+				<reportElement uuid="2875af78-04a0-483f-922c-52af98ce0a89" x="-20" y="141" width="595" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="dbeae41b-201a-4f08-8552-ce7bdffd4f56" x="103" y="32" width="358" height="105"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jinastores@gmail.com
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="231196b5-8dd8-425b-b826-24788adcffec" x="102" y="4" width="358" height="28"/>
+				<textElement>
+					<font fontName="Times New Roman" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works Pvt Ltd.
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="1dfc31db-3359-4fef-b50d-1923a9913dc9" x="4" y="5" width="206" height="100"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="54a0c658-1ad7-4151-a529-366f505d4db0" x="199" y="2" width="215" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER DETAILS REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e86b8372-fb4c-48a4-aec2-8b42806fcbd1" x="0" y="8" width="26" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SL.NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a8ca0b85-488b-4d5c-9d17-efa742b25355" x="26" y="8" width="70" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16384cb6-58b5-4e3e-be24-430d9bbe2b8f" x="89" y="8" width="62" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d742fae5-0e54-4deb-9af3-9addd6244db2" x="219" y="8" width="66" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOBILE NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8a4f6fab-6a33-4e4c-a596-a0d6ca1943ca" x="294" y="8" width="68" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PHONE.NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70c883d2-70ad-489f-b3e4-535ddb945c75" x="364" y="8" width="68" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3c979997-6136-4177-8825-329200d36b00" x="439" y="8" width="69" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAN NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3296ae5f-a737-43ff-9000-3551ba0d742d" x="499" y="8" width="69" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST NO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="83417213-f0ba-4cc7-a35e-eba335de7acf" x="0" y="4" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d1399e10-e42c-47cd-8393-a5f1f1d49c22" x="1" y="45" width="554" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement uuid="608fca04-40ac-4eb1-b6ae-da8f0d27ad44" x="1" y="3" width="25" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f06ceedf-3e7c-430c-9c19-d799b61e042e" x="26" y="3" width="80" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="103bdae5-c9df-4198-ae4f-c64ca17ee793" x="87" y="5" width="126" height="36"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4587f417-ea28-462b-a9a2-ff24d6f3aff4" x="143" y="21" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8adeddf-2506-47e6-ae23-b8a05c870210" x="90" y="21" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b341d021-8579-4ae4-9e05-056ac6775c89" x="222" y="3" width="100" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_mob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fa7f6d81-ef6a-48e4-aff1-4607cf666451" x="295" y="3" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_ph}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="28ea7109-3dbc-41b5-aea6-4a6356798f71" x="360" y="5" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cd8e3c89-7e5b-483c-974b-b6ba47dbb04b" x="455" y="5" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_pan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03553734-458c-4fae-b15a-58637cb1f5e0" x="515" y="4" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblsupplier_gstno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

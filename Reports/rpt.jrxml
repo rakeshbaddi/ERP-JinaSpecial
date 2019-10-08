@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ff0397b3-2dba-449d-ad94-c45bd1ba5fd1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblgrr.`id` AS tblgrr_id,
+     tblgrr.`grrno` AS tblgrr_grrno,
+     tblgrr.`recpt_date` AS tblgrr_recpt_date,
+     tblgrr.`pono` AS tblgrr_pono,
+     tblgrr.`podate` AS tblgrr_podate,
+     tblgrr.`supp_name` AS tblgrr_supp_name,
+     tblgrr.`item_desc` AS tblgrr_item_desc,
+     tblgrr.`inv_no` AS tblgrr_inv_no,
+     tblgrr.`inv_date` AS tblgrr_inv_date,
+     tblgrr.`inv_qty` AS tblgrr_inv_qty,
+     tblgrr.`item_price` AS tblgrr_item_price,
+     tblgrr.`revd_qty` AS tblgrr_revd_qty,
+     tblgrr.`dcno` AS tblgrr_dcno
+FROM
+     `tblgrr` tblgrr]]>
+	</queryString>
+	<field name="tblgrr_id" class="java.lang.Integer"/>
+	<field name="tblgrr_grrno" class="java.lang.String"/>
+	<field name="tblgrr_recpt_date" class="java.lang.String"/>
+	<field name="tblgrr_pono" class="java.lang.String"/>
+	<field name="tblgrr_podate" class="java.lang.String"/>
+	<field name="tblgrr_supp_name" class="java.lang.String"/>
+	<field name="tblgrr_item_desc" class="java.lang.String"/>
+	<field name="tblgrr_inv_no" class="java.lang.String"/>
+	<field name="tblgrr_inv_date" class="java.lang.String"/>
+	<field name="tblgrr_inv_qty" class="java.lang.String"/>
+	<field name="tblgrr_item_price" class="java.lang.String"/>
+	<field name="tblgrr_revd_qty" class="java.lang.String"/>
+	<field name="tblgrr_dcno" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9994f9bd-e0ff-477e-b0c7-be9bebb5d993" x="160" y="29" width="358" height="105"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Regd Office & Works
+Plot No.39,  KIADB Industrial Area, Honaga
+Belgaum - 591113 (Karnataka State)
+Ph.No. 0831 - 2414200, 2414690
+Fax No.: 0831-2414115
+E-mail - jssw@sancharnet.in
+]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="eb666509-4be3-416a-90ea-99160fa18d14" x="10" y="10" width="134" height="111"/>
+				<imageExpression><![CDATA["E:\\Commercial\\jinaSpecial\\Reports\\jina.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="fadb5aba-dd8d-44ee-9a08-a6e2647b1b84" x="160" y="0" width="358" height="28"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jina Special Steel Works
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4ae39988-de26-4858-aa23-748507fe8aa1" x="209" y="0" width="152" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Goods Receipt Register]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3059b278-75c6-412b-b3d0-7bcc21b01729" x="359" y="1" width="74" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[INVOICE NO & DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="09740ce9-7e42-4dd2-b674-5946b151272c" x="127" y="1" width="39" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[P.O DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="234a9957-a085-48e7-8763-c6cc4bf74c35" x="585" y="1" width="60" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[QTY REJECTED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e27f6b1a-50e7-4ce6-ac10-eb16d6303ebf" x="167" y="1" width="67" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ba8212d9-ad8d-4678-a10d-3abf4b347e67" x="701" y="-3" width="56" height="41"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ACCPETED DEPT HOD SIGN ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab42e7e1-988e-4fb5-a763-6e982177a5bc" x="37" y="1" width="55" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[RECEIPT DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a6eb76ae-bb39-4de2-ac6e-a9d0cef9cf3a" x="485" y="1" width="41" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[PRICE/QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f860a8a4-50d5-4fae-b91d-a04b571e2982" x="525" y="1" width="64" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[QTY ACCEPTED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69741111-ac2a-4887-b34b-12816481e0d6" x="92" y="1" width="32" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[P.O NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9642a0b8-bd78-430a-9637-428bbdae908c" x="638" y="1" width="63" height="35"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ACCEPTED DEPT ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="936ef873-f1f4-4cbb-87a0-348b0ffbfc9c" x="758" y="3" width="64" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f4d251f-70bd-4e64-955c-b600ce409dbb" x="-1" y="1" width="37" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[G.R.R.NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9cdf4e34-3b57-4e70-8669-30094bbf0a64" x="223" y="1" width="90" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9c21789-b49f-4241-8664-f9949d2c9233" x="311" y="0" width="47" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[DC NO & DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eaa10f7e-0417-43c2-85ae-6e787b40860f" x="432" y="1" width="56" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[INVOICE QTY]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
